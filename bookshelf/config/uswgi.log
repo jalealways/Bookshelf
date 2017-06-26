@@ -1,0 +1,239 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Jun 26 22:43:35 2017] ***
+compiled with version: 5.4.0 20160609 on 26 June 2017 22:26:40
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/Bookshelf/bookshelf/config
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/bookshelf/bin/uwsgi
+chdir() to /home/python/Desktop/Bookshelf/bookshelf/
+your processes number limit is 7776
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 172.20.10.3:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:41946 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Nov 19 2016, 06:48:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x131ef70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x131ef70 pid: 11511 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11511)
+spawned uWSGI worker 1 (pid: 11514, cores: 2)
+spawned uWSGI worker 2 (pid: 11515, cores: 2)
+spawned uWSGI worker 3 (pid: 11516, cores: 2)
+spawned uWSGI worker 4 (pid: 11517, cores: 2)
+spawned uWSGI http 1 (pid: 11518)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11515|app: 0|req: 1/1] 172.20.10.2 () {36 vars in 606 bytes} [Mon Jun 26 14:44:36 2017] GET / => generated 56598 bytes in 235 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11515|app: 0|req: 2/2] 172.20.10.2 () {36 vars in 587 bytes} [Mon Jun 26 14:44:39 2017] GET /favicon.ico => generated 56689 bytes in 47 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 1)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11515|app: 0|req: 3/3] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:45:46 2017] GET / => generated 56733 bytes in 53 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11515|app: 0|req: 4/4] 172.20.10.2 () {36 vars in 587 bytes} [Mon Jun 26 14:45:46 2017] GET /favicon.ico => generated 56689 bytes in 64 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 1)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11515|app: 0|req: 5/5] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:45:53 2017] GET / => generated 56733 bytes in 52 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11515|app: 0|req: 6/6] 172.20.10.2 () {36 vars in 587 bytes} [Mon Jun 26 14:45:53 2017] GET /favicon.ico => generated 56689 bytes in 62 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 1)
+gateway "uWSGI http 1" has been buried (pid: 11518)
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 11514)...
+Gracefully killing worker 2 (pid: 11515)...
+Gracefully killing worker 3 (pid: 11516)...
+Gracefully killing worker 4 (pid: 11517)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/python/Desktop/Bookshelf/bookshelf/config
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (127.0.0.1:41946)
+running /home/python/.virtualenvs/bookshelf/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Jun 26 14:46:24 2017] ***
+compiled with version: 5.4.0 20160609 on 26 June 2017 22:26:40
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/Bookshelf/bookshelf/config
+detected binary path: /home/python/.virtualenvs/bookshelf/bin/uwsgi
+chdir() to /home/python/Desktop/Bookshelf/bookshelf/
+your processes number limit is 7776
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 172.20.10.3:5000 fd 5
+uwsgi socket 0 bound to TCP address 127.0.0.1:43165 (port auto-assigned) fd 4
+Python version: 2.7.12 (default, Nov 19 2016, 06:48:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x21bdc50
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x21bdc50 pid: 11511 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 11511)
+spawned uWSGI worker 1 (pid: 11587, cores: 2)
+spawned uWSGI worker 2 (pid: 11588, cores: 2)
+spawned uWSGI worker 3 (pid: 11589, cores: 2)
+spawned uWSGI worker 4 (pid: 11590, cores: 2)
+spawned uWSGI http 1 (pid: 11591)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11589|app: 0|req: 1/1] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:46:29 2017] GET / => generated 56855 bytes in 88 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11589|app: 0|req: 2/2] 172.20.10.2 () {36 vars in 587 bytes} [Mon Jun 26 14:46:30 2017] GET /favicon.ico => generated 56811 bytes in 63 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 1)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11589|app: 0|req: 3/3] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:46:32 2017] GET / => generated 56855 bytes in 48 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11589|app: 0|req: 4/4] 172.20.10.2 () {36 vars in 587 bytes} [Mon Jun 26 14:46:32 2017] GET /favicon.ico => generated 56811 bytes in 59 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Jun 26 22:47:34 2017] ***
+compiled with version: 5.4.0 20160609 on 26 June 2017 22:26:40
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/Bookshelf/bookshelf/config
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/bookshelf/bin/uwsgi
+chdir() to /home/python/Desktop/Bookshelf/bookshelf/
+your processes number limit is 7776
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 172.20.10.3:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:40445 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Nov 19 2016, 06:48:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x15fef70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x15fef70 pid: 11606 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11606)
+spawned uWSGI worker 1 (pid: 11609, cores: 2)
+spawned uWSGI worker 2 (pid: 11610, cores: 2)
+spawned uWSGI worker 3 (pid: 11611, cores: 2)
+spawned uWSGI worker 4 (pid: 11612, cores: 2)
+spawned uWSGI http 1 (pid: 11613)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11610|app: 0|req: 1/1] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:47:40 2017] GET / => generated 56855 bytes in 71 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11610|app: 0|req: 2/2] 172.20.10.2 () {40 vars in 640 bytes} [Mon Jun 26 14:47:41 2017] GET /favicon.ico => generated 57072 bytes in 75 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 1)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11611|app: 0|req: 1/3] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:47:41 2017] GET / => generated 56855 bytes in 70 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11611|app: 0|req: 2/4] 172.20.10.2 () {40 vars in 640 bytes} [Mon Jun 26 14:47:41 2017] GET /favicon.ico => generated 57072 bytes in 69 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 11613)
+worker 3 buried after 1 seconds
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 4 buried after 2 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Jun 26 22:51:06 2017] ***
+compiled with version: 5.4.0 20160609 on 26 June 2017 22:26:40
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/Bookshelf/bookshelf/config
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/bookshelf/bin/uwsgi
+chdir() to /home/python/Desktop/Bookshelf/bookshelf/
+your processes number limit is 7776
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 172.20.10.3:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:36249 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Nov 19 2016, 06:48:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xe38f70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 4 seconds on interpreter 0xe38f70 pid: 11688 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11688)
+spawned uWSGI worker 1 (pid: 11693, cores: 1)
+spawned uWSGI http 1 (pid: 11694)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11693|app: 0|req: 1/1] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:51:23 2017] GET / => generated 56748 bytes in 247 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: '172.20.10.3:5000'. You may need to add u'172.20.10.3' to ALLOWED_HOSTS.
+[pid: 11693|app: 0|req: 2/2] 172.20.10.2 () {40 vars in 640 bytes} [Mon Jun 26 14:51:23 2017] GET /favicon.ico => generated 56965 bytes in 158 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 11694)
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Jun 26 22:52:06 2017] ***
+compiled with version: 5.4.0 20160609 on 26 June 2017 22:26:40
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /home/python/Desktop/Bookshelf/bookshelf/config
+writing pidfile to uwsgi.pid
+detected binary path: /home/python/.virtualenvs/bookshelf/bin/uwsgi
+chdir() to /home/python/Desktop/Bookshelf/bookshelf/
+your processes number limit is 7776
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 172.20.10.3:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:46418 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Nov 19 2016, 06:48:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x1709f70
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145536 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1709f70 pid: 11718 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11718)
+spawned uWSGI worker 1 (pid: 11721, cores: 1)
+spawned uWSGI http 1 (pid: 11722)
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/bookshelf/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/python/.virtualenvs/bookshelf/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/python/.virtualenvs/bookshelf/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./apps/mytest/views.py", line 12, in test
+    data = request.GET['unlock']
+  File "/home/python/.virtualenvs/bookshelf/local/lib/python2.7/site-packages/django/utils/datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "u'unlock'"
+[pid: 11721|app: 0|req: 1/1] 172.20.10.2 () {38 vars in 637 bytes} [Mon Jun 26 14:52:12 2017] GET / => generated 62087 bytes in 1422 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 11721|app: 0|req: 2/2] 172.20.10.2 () {40 vars in 640 bytes} [Mon Jun 26 14:52:13 2017] GET /favicon.ico => generated 2117 bytes in 46 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11721|app: 0|req: 3/3] 172.20.10.2 () {36 vars in 625 bytes} [Mon Jun 26 14:52:31 2017] GET /?unlock=ok => generated 13 bytes in 642 msecs (HTTP/1.1 200) 3 headers in 108 bytes (1 switches on core 0)
