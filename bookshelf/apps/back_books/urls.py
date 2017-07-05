@@ -3,5 +3,4 @@ import views
 
 
 urlpatterns=[
-    url(r'load', views.load),
 ]

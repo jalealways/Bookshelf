@@ -107,7 +107,7 @@ class TbBookshelfBoxInfo(models.Model):
     box_id = models.CharField(db_column='BOX_ID', max_length=100)  # Field name made lowercase.
     book_id = models.CharField(db_column='BOOK_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     box_status = models.CharField(db_column='BOX_STATUS', max_length=1, blank=True, null=True)  # Field name made lowercase.
-    order_reader_id = models.CharField(db_column='ORDER_READER_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    order_open_id = models.CharField(db_column='ORDER_OPEN_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     update_time = models.DateTimeField(db_column='UPDATE_TIME', blank=True, null=True)  # Field name made lowercase.
     raspberry_id = models.CharField(db_column='Raspberry_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     raspberry_status = models.CharField(db_column='Raspberry_status', max_length=10, blank=True, null=True)  # Field name made lowercase.
@@ -260,7 +260,7 @@ class TbReaderAuth(models.Model):
 
 
 class TbReaderInfo(models.Model):
-    wechat_id = models.CharField(db_column='WECHAT_ID', primary_key=True, max_length=64)  # Field name made lowercase.
+    open_id = models.CharField(db_column='OPEN_ID', primary_key=True, max_length=10)  # Field name made lowercase.
     customer = models.ForeignKey(TbCustomerInfo, models.DO_NOTHING, db_column='CUSTOMER_ID', blank=True, null=True)  # Field name made lowercase.
     tel_no = models.CharField(db_column='TEL_NO', max_length=11, blank=True, null=True)  # Field name made lowercase.
     borrow_limit_num = models.IntegerField(db_column='BORROW_LIMIT_NUM', blank=True, null=True)  # Field name made lowercase.
