@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from __future__ import unicode_literals
+from django.http import HttpResponse
+from services import *
 
-# Create your views here.
+
+def back(request):
+    book_id = request.GET('book_id')
+    return search_book(book_id)

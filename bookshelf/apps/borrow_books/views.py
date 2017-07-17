@@ -18,7 +18,7 @@ def user_auth(oppen_id, box_id):
     if res == 'register':
         return HttpResponse('注册.html')
     elif res == 'duang':
-        return HttpResponse('等待其他操作完成.html')
+        return HttpResponse('等待其他操作完成')
     else:
         borrow_num = res
         return box_status(box_id, oppen_id, borrow_num)
