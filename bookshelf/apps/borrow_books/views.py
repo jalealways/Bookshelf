@@ -4,7 +4,9 @@ from django.http import HttpResponse
 from services import borrowService as service
 from .. import untils_
 
+
 def load(request):
+    print request.GET['oppen_id']
     oppen_id = '1'
     box_id = 'box0000003'
     if oppen_id:
