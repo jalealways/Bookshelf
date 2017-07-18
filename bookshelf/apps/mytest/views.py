@@ -9,6 +9,6 @@ from services import test as service
 
 def test(request):
     res = service.findISBN()
-    data = request.GET['unlock']
+    # data = request.GET['unlock']
     # untils_.sender('172.20.10.5', data)
-    return HttpResponse(data)
+    return HttpResponse('hello read123')

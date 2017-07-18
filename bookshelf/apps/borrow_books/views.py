@@ -7,7 +7,7 @@ from .. import untils_
 
 def load(request):
     x = request.GET['code']
-    with open('x.text', 'w') as f:
+    with open('x.txt', 'w') as f:
         f.write(x)
     return HttpResponse(x)
 #     oppen_id = '1'
