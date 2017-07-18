@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.mytest',
     'apps.borrow_books',
-    'apps.back_books'
+    'apps.back_books',
+    'apps.weixin'
 ]
 
 MIDDLEWARE = [
