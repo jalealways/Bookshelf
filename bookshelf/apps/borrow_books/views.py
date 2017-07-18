@@ -6,7 +6,10 @@ from .. import untils_
 
 
 def load(request):
-    return HttpResponse(request.GET['code'])
+    x = request.GET['code']
+    with open('x.text', 'w') as f:
+        f.write(x)
+    return HttpResponse(x)
 #     oppen_id = '1'
 #     box_id = 'box0000003'
 #     if oppen_id:
