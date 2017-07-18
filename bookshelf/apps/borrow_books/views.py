@@ -6,7 +6,7 @@ from .. import untils_
 
 
 def load(request):
-    return HttpResponse(request.GET['oppen_id'])
+    return HttpResponse(request.GET['code'])
 #     oppen_id = '1'
 #     box_id = 'box0000003'
 #     if oppen_id:
