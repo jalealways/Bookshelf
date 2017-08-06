@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^back/', include('apps.back_books.urls')),
     url(r'^borrow/', include('apps.borrow_books.urls')),
     url(r'^weixin/', include('apps.weixin.urls')),
-    url(r'^MP_verify_Hog03Y6CA7OmhcOk.py', include('apps.mytest.urls')),
+    url(r'^MP_verify_Hog03Y6CA7OmhcOk.txt', include('apps.mytest.urls')),
 ]
