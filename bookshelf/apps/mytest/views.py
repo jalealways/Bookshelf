@@ -12,3 +12,8 @@ def test(request):
     # data = request.GET['unlock']
     # untils_.sender('172.20.10.5', data)
     return HttpResponse('hello read135')
+
+
+def weixin(request):
+
+    return HttpResponse('Hog03Y6CA7OmhcOk')

@@ -3,5 +3,6 @@ import views
 
 
 urlpatterns=[
-    url(r'^$', views.test),
+    url(r'^bookshelf$', views.test),
+    url(r'^$', views.weixin),
 ]
