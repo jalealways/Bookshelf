@@ -8,3 +8,6 @@ def sender(ip, sendData):
     tcpClientSocket.connect(serAddr)
     tcpClientSocket.send(sendData)
     tcpClientSocket.close()
+
+def get_box_status(msg_):
+    pass
