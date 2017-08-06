@@ -129,7 +129,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR, 'mp')
 ]
 
-
 STATIC_URL = '/'
 STATIC_ROOT = '/var/www/bookshelf/static/'
 
