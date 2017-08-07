@@ -2,16 +2,24 @@
 
 from __future__ import unicode_literals
 from django.http import HttpResponse
+import requests
+import json
 
 from services import borrowService as service
 from .. import untils_
 
 
 def load(request):
-    x = request.GET['code']
+    appid = 'wxaab569c52de78bc3'
+    appsecret = '33c77e29c7991ed853a2036c3781d3c1'
+    code = request.GET['code']
     with open('x.txt', 'w') as f:
-        f.write(x)
-    return HttpResponse(x)
+        get_acces_tooken_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='+\
+                               '&secret=?&code=?&grant_type=authorization_code' % (appid, appsecret, code)
+        response = request.get(get_acces_tooken_url).text
+        openid = eval(response)['openid']
+        f.write(response)
+    return HttpResponse(openid)
 #     oppen_id = '1'
 #     box_id = 'box0000003'
 #
