@@ -21,7 +21,7 @@ def load(request):
         f.write(response)
         openid = eval(response)['openid']
 
-    return HttpResponse('openid:? * box_id:?' %(openid, box_id))
+    return HttpResponse('openid:%s * box_id:%s' %(openid, box_id))
 #     oppen_id = '1'
 #     box_id = 'box0000003'
 #
