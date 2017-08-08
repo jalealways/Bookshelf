@@ -17,7 +17,7 @@ def load(request):
     with open('x.txt', 'w') as f:
         get_acces_tooken_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='+\
                                appid+'&secret='+appsecret+'&code='+code+'&grant_type=authorization_code'
-        response = request.get(get_acces_tooken_url).text
+        response = requests.get(get_acces_tooken_url).text
         openid = eval(response)['openid']
         f.write(response)
     return HttpResponse('openid:? * box_id:' %(openid, box_id))
