@@ -11,7 +11,7 @@ from .. import untils_
 
 def load(request):
     appid = 'wxaab569c52de78bc3'
-    appsecret = '33c77e29c7991ed853a2036c3781d3c1'
+    appsecret = 'b1e31005610020ffb5311b5952ff00f6'
     code = request.GET['code']
     box_id = request.GET['state']
     with open('x.txt', 'w') as f:
