@@ -22,7 +22,7 @@ def load(request):
         openid = eval(response)['openid']
         f.write(openid)
 
-    return HttpResponse('openid:%s * box_id:%s' %(openid, box_id))
+    # return HttpResponse('openid:%s * box_id:%s' %(openid, box_id))
     oppen_id = openid
 
     #  验证是否存在oppen_id
