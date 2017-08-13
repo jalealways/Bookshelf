@@ -37,11 +37,11 @@ def load(request):
         else:
             #  隔间状态校验
             box_status = service.box_status_(box_id, oppen_id)
-            if box_status == '被占用':
+            if box_status == 'exception':
                 return HttpResponse('提示：被占用')
-            elif box_status == '门没锁':
+            elif box_status == 'door_unlock':
                 return HttpResponse('提示：门没锁')
-            elif box_status == '书没了':
+            elif box_status == 'book_none':
                 return HttpResponse('提示：没有书在里面')
             else:
                 #  开锁

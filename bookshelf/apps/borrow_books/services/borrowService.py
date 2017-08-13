@@ -34,13 +34,13 @@ def box_status_(box_id, oppen_id):
     box[0].lock_board_id, box[0].lock_id, box[0].raspberry_ip, box[0].order_open_id
     #  box_status  0 正常  1 被占用/异常
     if box_status == '1':
-        return '被占用'
+        return 'exception'
     # elif cus_id != order_open_id:
     #     return 'n' + "别人预约"
     elif "0" == lock_status:
-        return "门没锁"
+        return "door_unlock"
     elif "0" == ray_status:
-        return "书没了"
+        return "book_none"
     else:
         models.TbBookshelfBoxInfo.objects.filter(box_id=box_id).update(box_status='1')
         return (box_id, "操作命令", lock_board_id, lock_id, oppen_id)
