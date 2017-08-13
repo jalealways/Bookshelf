@@ -19,7 +19,7 @@ def user_rights_check(oppen_id, box_id):
     re = models.TbReaderInfo.objects.filter(open_id=oppen_id)
     if re[0].sessionid == '1':
         return 'busyDoing'
-    elif re[0].borrow_limit_num - re[0].order_num <= 0:
+    elif re[0].borrow_limit_num - re[0].borrow_num <= 0:
         return 'outOfNum'
     else:
         re.update(sessionid='1')
