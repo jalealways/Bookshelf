@@ -37,7 +37,7 @@ def box_status_(box_id, oppen_id):
         return 'exception'
     # elif cus_id != order_open_id:
     #     return 'n' + "别人预约"
-    elif "0" == lock_status:
+    elif "unlock" == lock_status:
         return "door_unlock"
     elif "0" == ray_status:
         return "book_none"
