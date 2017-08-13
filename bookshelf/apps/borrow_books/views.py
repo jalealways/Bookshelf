@@ -30,9 +30,9 @@ def load(request):
     if oppen_id_exits:
         #  用户权限校验
         user_rights = service.user_rights_check(oppen_id, box_id)
-        if user_rights == '有任务正在进行':
+        if user_rights == 'busyDoing':
             return HttpResponse("有任务.html")
-        elif user_rights == '超出可借数量':
+        elif user_rights == 'outOfNum':
             return HttpResponse('超出可借数量')
         else:
             #  隔间状态校验

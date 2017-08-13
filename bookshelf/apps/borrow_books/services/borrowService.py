@@ -18,9 +18,9 @@ def verify_oppen_id(oppen_id):
 def user_rights_check(oppen_id, box_id):
     re = models.TbReaderInfo.objects.filter(open_id=oppen_id)
     if re[0].sessionid == '1':
-        return '有任务正在进行'
+        return 'busyDoing'
     elif re[0].borrow_limit_num - re[0].order_num <= 0:
-        return '超出可借数量'
+        return 'outOfNum'
     else:
         re.update(sessionid='1')
         return 'continue'
