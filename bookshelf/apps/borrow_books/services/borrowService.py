@@ -32,6 +32,9 @@ def box_status_(box_id, oppen_id):
     lock_board_id, lock_id, raspberry_ip, order_open_id = box[0].book_id, \
     box[0].box_status, box[0].lock_status, box[0].ray_status, \
     box[0].lock_board_id, box[0].lock_id, box[0].raspberry_ip, box[0].order_open_id
+
+    models.TbBookshelfBoxInfo.objects.filter(box_id=box_id).update(box_status='0')
+
     #  box_status  0 正常  1 被占用/异常
     if box_status == '1':
         return 'exception'
@@ -42,7 +45,6 @@ def box_status_(box_id, oppen_id):
     elif "0" == ray_status:
         return "book_none"
     else:
-        models.TbBookshelfBoxInfo.objects.filter(box_id=box_id).update(box_status='1')
         return (box_id, "操作命令", lock_board_id, lock_id, oppen_id)
 
 
