@@ -49,7 +49,7 @@ def load(request):
                 if msg == '异常':
                     return HttpResponse('开锁出现异常')
                 else:
-                    return 'ok'
+                    return HttpResponse('ok unlock')
 
     else:
         return HttpResponse('注册.html')
