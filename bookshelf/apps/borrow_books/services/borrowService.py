@@ -47,7 +47,7 @@ def box_status_(box_id, oppen_id):
 
 
 def unlock(msg):
-    pass
+    return 'ok'
     back_msg = untils_.sender('1', msg)
     if back_msg == '异常？':
         models.TbBookshelfBoxInfo.objects.filter(box_id=msg[0]).update(box_status='1')
