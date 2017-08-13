@@ -260,7 +260,7 @@ class TbReaderAuth(models.Model):
 
 
 class TbReaderInfo(models.Model):
-    open_id = models.CharField(db_column='OPEN_ID', primary_key=True, max_length=10)  # Field name made lowercase.
+    open_id = models.CharField(db_column='OPEN_ID', primary_key=True, max_length=100)  # Field name made lowercase.
     customer = models.ForeignKey(TbCustomerInfo, models.DO_NOTHING, db_column='CUSTOMER_ID', blank=True, null=True)  # Field name made lowercase.
     tel_no = models.CharField(db_column='TEL_NO', max_length=11, blank=True, null=True)  # Field name made lowercase.
     borrow_limit_num = models.IntegerField(db_column='BORROW_LIMIT_NUM', blank=True, null=True)  # Field name made lowercase.
