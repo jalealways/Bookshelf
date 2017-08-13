@@ -20,6 +20,7 @@ def load(request):
         response = requests.get(get_acces_tooken_url).text
         f.write(response)
         openid = eval(response)['openid']
+        f.write(openid)
 
     return HttpResponse('openid:%s * box_id:%s' %(openid, box_id))
     oppen_id = openid
