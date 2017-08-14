@@ -129,7 +129,6 @@ USE_TZ = True
 # admin jale+passwordread135
 
 
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
