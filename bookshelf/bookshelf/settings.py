@@ -134,7 +134,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR, 'mp')
 ]
 
-STATIC_URL = '/'
+STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/bookshelf/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
