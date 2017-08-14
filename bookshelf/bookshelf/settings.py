@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'apps.mytest',
     'apps.borrow_books',
     'apps.back_books',
-    'apps.weixin'
+    'apps.weixin',
+    'apps.book_list'
 ]
 
 MIDDLEWARE = [
@@ -125,10 +126,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# admin jale+passwordread135
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR, 'mp')
 ]
 
 STATIC_URL = '/'
 STATIC_ROOT = '/var/www/bookshelf/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
 

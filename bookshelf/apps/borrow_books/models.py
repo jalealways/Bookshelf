@@ -10,6 +10,96 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class AuthGroup(models.Model):
+    name = models.CharField(unique=True, max_length=80)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group'
+
+
+class AuthGroupPermissions(models.Model):
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+    permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group_permissions'
+        unique_together = (('group', 'permission'),)
+
+
+class AuthPermission(models.Model):
+    name = models.CharField(max_length=255)
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
+    codename = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_permission'
+        unique_together = (('content_type', 'codename'),)
+
+
+class AuthUser(models.Model):
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.IntegerField()
+    username = models.CharField(unique=True, max_length=150)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.CharField(max_length=254)
+    is_staff = models.IntegerField()
+    is_active = models.IntegerField()
+    date_joined = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user'
+
+
+class AuthUserGroups(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_groups'
+        unique_together = (('user', 'group'),)
+
+
+class AuthUserUserPermissions(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_user_permissions'
+        unique_together = (('user', 'permission'),)
+
+
+class DjangoAdminLog(models.Model):
+    action_time = models.DateTimeField()
+    object_id = models.TextField(blank=True, null=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.SmallIntegerField()
+    change_message = models.TextField()
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'django_admin_log'
+
+
+class DjangoContentType(models.Model):
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'django_content_type'
+        unique_together = (('app_label', 'model'),)
+
+
 class DjangoMigrations(models.Model):
     app = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
@@ -18,6 +108,16 @@ class DjangoMigrations(models.Model):
     class Meta:
         managed = False
         db_table = 'django_migrations'
+
+
+class DjangoSession(models.Model):
+    session_key = models.CharField(primary_key=True, max_length=40)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_session'
 
 
 class TbBookBaseInfo(models.Model):
@@ -32,7 +132,7 @@ class TbBookBaseInfo(models.Model):
     child_class = models.ForeignKey('TbDimBookClass', models.DO_NOTHING, db_column='CHILD_CLASS_ID', blank=True, null=True)  # Field name made lowercase.
     douban_rating = models.DecimalField(db_column='DOUBAN_RATING', max_digits=2, decimal_places=1, blank=True, null=True)  # Field name made lowercase.
     brief_introduction = models.CharField(db_column='BRIEF_INTRODUCTION', max_length=500, blank=True, null=True)  # Field name made lowercase.
-    cover_pic = models.CharField(db_column='COVER_PIC', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    cover_pic = models.ImageField(db_column='COVER_PIC', upload_to='static/images/')  # Field name made lowercase.
     status = models.CharField(db_column='STATUS', max_length=1, blank=True, null=True)  # Field name made lowercase.
     create_time = models.DateTimeField(db_column='CREATE_TIME')  # Field name made lowercase.
     create_user_id = models.CharField(db_column='CREATE_USER_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.

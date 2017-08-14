@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^borrow/', include('apps.borrow_books.urls')),
     url(r'^weixin/', include('apps.weixin.urls')),
     url(r'^MP_verify_Hog03Y6CA7OmhcOk.txt', include('apps.mytest.urls')),
+    url(r'^bookList/', include('apps.book_list.urls')),
 ]
