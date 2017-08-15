@@ -6,17 +6,19 @@ from .. import models
 def book_list_service():
     res = []
     books = models.TbBookBaseInfo.objects.all()
-    try:
-        for i in range(0, len(books)):
-            dic = {'id':0, 'imageURl':0, 'title':0, 'author':0, 'introduce':0, 'publish': 0, 'type': 0}
-            dic['id'], dic['imageURL'], dic['title'],
-            dic['author'], dic['introduce'], dic['publish'],
-            dic['type'] = books[i].isbn, books[i].cover_pic,
-            books[i].book_name, books[i].author_name, books[i].brief_introduction,
-            books[i].publishing_house, books[i].original_proce
-            res.append(dic)
-    except:
-        pass
+
+    for i in range(0, len(books)):
+        dic = {'id': books[i].isbn, 'imageURl': books[i].cover_pic,
+               'title': books[i].book_name, 'author': books[i].author_name,
+               'introduce': books[i].brief_introduction, 'publish': books[i].publishing_house,
+               'type': ''}
+        # dic['id'], dic['imageURL'], dic['title'],
+        # dic['author'], dic['introduce'], dic['publish'],
+        # dic['type'] = books[i].isbn, books[i].cover_pic,
+        # books[i].book_name, books[i].author_name, books[i].brief_introduction,
+        # books[i].publishing_house, books[i].original_proce
+        res.append(dic)
+
     return res
 
 
