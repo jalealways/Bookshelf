@@ -9,7 +9,7 @@ def book_list_service():
 
     for book in books:
 
-        dic = {'id': unicode(book.isbn), 'imageURl': unicode(book.cover_pic),
+        dic = {'id': unicode(book.isbn), 'imageURl': 'http:www.read135.com' + unicode(book.cover_pic).encode('utf-8')[1:39],
                'title': unicode(book.book_name), 'author': unicode(book.author_name),
                'introduce': unicode(book.brief_introduction), 'publish': unicode(book.publishing_house),
                'type': 0}
