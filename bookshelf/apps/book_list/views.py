@@ -11,7 +11,7 @@ from services import *
 def list(request):
 
     res = book_list_service()
-    return HttpResponse(json.dumps(res))
+    return HttpResponse(res)
 
 
 def detail(request):

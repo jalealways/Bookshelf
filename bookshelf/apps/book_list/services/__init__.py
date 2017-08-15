@@ -9,7 +9,7 @@ def book_list_service():
 
     for book in books:
 
-        dic = {'id': book.isbn, 'imageURl': chr(book.cover_pic),
+        dic = {'id': book.isbn, 'imageURl': book.cover_pic,
                'title': book.book_name, 'author': book.author_name,
                'introduce': book.brief_introduction, 'publish': book.publishing_house,
                'type': 0}
