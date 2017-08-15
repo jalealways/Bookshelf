@@ -11,7 +11,7 @@ def book_list_service():
 
         dic = {'id': unicode(book.isbn), 'imageURl': 'http:www.read135.com' + unicode(book.cover_pic).encode('utf-8')[1:39],
                'title': unicode(book.book_name), 'author': unicode(book.author_name),
-               'introduce': unicode(book.brief_introduction), 'publish': unicode(book.publishing_house),
+               'introduce': unicode(book.brief_introduction), 'publish': unicode(book.TbPublishingHouseBaseInfo__publishing_house_name),
                'type': 0}
         # dic['id'], dic['imageURL'], dic['title'],
         # dic['author'], dic['introduce'], dic['publish'],
