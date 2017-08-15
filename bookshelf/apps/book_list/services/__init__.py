@@ -31,5 +31,5 @@ def book_detail_service(id):
                'introduce': book[0].brief_introduction, 'publish': book[0].publishing_house,
                'type': 0}
 
-    return [res_book, 0]
+    return [res_book, res_book]
 
