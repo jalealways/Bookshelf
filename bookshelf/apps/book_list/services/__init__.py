@@ -20,7 +20,6 @@ def book_list_service():
         # books[i].publishing_house, books[i].original_proce
         res.append(dic)
 
-
     return res
 
 
