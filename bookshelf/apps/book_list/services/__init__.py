@@ -11,7 +11,7 @@ def book_list_service():
 
         dic = {'id': unicode(book.isbn), 'imageURl': unicode(book.cover_pic),
                'title': unicode(book.book_name), 'author': unicode(book.author_name),
-               'introduce': unicode(book.brief_introduction), 'publish': book.publishing_house,
+               'introduce': unicode(book.brief_introduction), 'publish': unicode(book.publishing_house),
                'type': 0}
         # dic['id'], dic['imageURL'], dic['title'],
         # dic['author'], dic['introduce'], dic['publish'],
