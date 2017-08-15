@@ -26,7 +26,8 @@ def book_list_service():
 
 def book_detail_service(id):
     book = models.TbBookBaseInfo.objects.filter(isbn=id)
-    res_book = {'id': unicode(book[0].isbn), 'imageURl': 'http:www.read135.com' + unicode(book.cover_pic).encode('utf-8')[41:],
+    res_book = {'id': unicode(book[0].isbn),
+                'imageURl': 'http:www.read135.com' + unicode(book[0].cover_pic).encode('utf-8')[41:],
                 'title': unicode(book[0].book_name), 'author': unicode(book[0].author_name),
                 'introduce': unicode(book[0].brief_introduction),
                 'publish': unicode(book.publishing_house.publishing_house_name),
