@@ -8,7 +8,7 @@ def book_list_service():
     books = models.TbBookBaseInfo.objects.all()
 
     for i in range(0, len(books)):
-        dic = {'id': books[i].isbn, 'imageURl': books[i].cover_pic,
+        dic = {'id': books[i].isbn, 'imageURl': chr(books[i].cover_pic),
                'title': books[i].book_name, 'author': books[i].author_name,
                'introduce': books[i].brief_introduction, 'publish': books[i].publishing_house,
                'type': ''}
