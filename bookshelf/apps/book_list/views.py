@@ -11,11 +11,11 @@ from services import *
 def list(request):
 
     res = book_list_service()
-    return HttpResponse(res, content_type='text/html', charset='utf-8')
+    return HttpResponse(json.dumps(res), content_type="application/json")
 
 
 def detail(request):
     book_id = request.GET['id']
     res = book_detail_service(book_id)
 
-    return HttpResponse(res, content_type='text/html', charset='utf-8')
+    return HttpResponse(json.dumps(res), content_type="application/json")
