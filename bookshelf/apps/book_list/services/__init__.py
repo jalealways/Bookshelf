@@ -25,10 +25,10 @@ def book_list_service():
 
 def book_detail_service(id):
     book = models.TbBookBaseInfo.objects.filter(isbn=id)
-    res_book = {'id': book[0].isbn, 'imageURl': unicode(book[0].cover_pic),
-               'title': book[0].book_name, 'author': book[0].author_name,
-               'introduce': book[0].brief_introduction, 'publish': book[0].publishing_house,
-               'type': 0}
+    res_book = {'id': unicode(book[0].isbn), 'imageURl': unicode(book[0].cover_pic),
+                'title': unicode(book[0].book_name), 'author': unicode(book[0].author_name),
+                'introduce': unicode(book[0].brief_introduction), 'publish': unicode(book[0].publishing_house),
+                'type': 0}
 
     return [res_book, res_book]
 
