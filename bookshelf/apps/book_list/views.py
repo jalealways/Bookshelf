@@ -18,4 +18,4 @@ def detail(request):
     book_id = request.GET['id']
     res = book_detail_service(book_id)
 
-    return HttpResponse(json.dumps(res))
+    return HttpResponse(res)
