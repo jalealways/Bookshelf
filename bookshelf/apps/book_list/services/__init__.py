@@ -9,7 +9,7 @@ def book_list_service():
 
     for book in books:
 
-        dic = {'id': book.isbn, 'imageURl': book.cover_pic,
+        dic = {'id': book.isbn, 'imageURl': unicode(book.cover_pic),
                'title': book.book_name, 'author': book.author_name,
                'introduce': book.brief_introduction, 'publish': book.publishing_house,
                'type': 0}
@@ -25,7 +25,7 @@ def book_list_service():
 
 def book_detail_service(id):
     book = models.TbBookBaseInfo.objects.filter(isbn=id)
-    res_book = {'id': book[0].isbn, 'imageURl': book[0].cover_pic,
+    res_book = {'id': book[0].isbn, 'imageURl': unicode(book[0].cover_pic),
                'title': book[0].book_name, 'author': book[0].author_name,
                'introduce': book[0].brief_introduction, 'publish': book[0].publishing_house,
                'type': 0}
