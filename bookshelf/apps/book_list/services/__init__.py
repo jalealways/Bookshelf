@@ -11,7 +11,8 @@ def book_list_service():
 
         dic = {'id': unicode(book.isbn), 'imageURl': 'http:www.read135.com' + unicode(book.cover_pic).encode('utf-8')[1:39],
                'title': unicode(book.book_name), 'author': unicode(book.author_name),
-               'introduce': unicode(book.brief_introduction), 'publish': unicode(book.publishing_house.publishing_house_name),
+               'introduce': unicode(book.brief_introduction),
+               'publish': unicode(book.publishing_house.publishing_house_name),
                'type': 0}
         # dic['id'], dic['imageURL'], dic['title'],
         # dic['author'], dic['introduce'], dic['publish'],
@@ -27,7 +28,8 @@ def book_detail_service(id):
     book = models.TbBookBaseInfo.objects.filter(isbn=id)
     res_book = {'id': unicode(book[0].isbn), 'imageURl': 'http:www.read135.com' + unicode(book.cover_pic).encode('utf-8')[41:],
                 'title': unicode(book[0].book_name), 'author': unicode(book[0].author_name),
-                'introduce': unicode(book[0].brief_introduction), 'publish': unicode(book[0].publishing_house),
+                'introduce': unicode(book[0].brief_introduction),
+                'publish': unicode(book.publishing_house.publishing_house_name),
                 'type': 0}
 
     return res_book
