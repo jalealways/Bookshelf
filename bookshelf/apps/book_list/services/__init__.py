@@ -3,9 +3,11 @@
 from .. import models
 
 
-def book_list_service():
+def book_list_service(type_):
     res = []
-    books = models.TbBookBaseInfo.objects.filter(status=1)
+    dim = models.TbDimBookClass.objects.filter(child_class_id=type_)
+    books = dim.TbBookBaseInfo_set.filter(status=1)
+    # books = models.TbBookBaseInfo.objects.filter(status=1, child_class.TbDimBookClass.= type_)
 
     for book in books:
 

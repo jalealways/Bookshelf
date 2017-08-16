@@ -3,6 +3,6 @@ import views
 
 
 urlpatterns=[
-url(r'^$', views.list),
+url(r'^$', views.book_list),
 url(r'^detail$', views.detail),
 ]

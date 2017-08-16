@@ -8,9 +8,9 @@ from django.shortcuts import render
 from services import *
 
 
-def list(request):
-
-    res = book_list_service()
+def book_list(request):
+    type_ = request.GET['type']
+    res = book_list_service(type_)
     return HttpResponse(json.dumps(res), content_type="application/json")
 
 
