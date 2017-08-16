@@ -7,7 +7,7 @@ def book_list_service(type_):
     res = []
     # dim = models.TbDimBookClass.objects.filter(child_class_id=type_)
     # books = dim.TbBookBaseInfo.filter(status=1)
-    books = models.TbBookBaseInfo.objects.filter(status=1, child_class__child_class_id=type_)
+    books = models.TbBookBaseInfo.objects.filter(status=1, child_class=type_)
 
     for book in books:
 
