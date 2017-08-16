@@ -16,7 +16,7 @@ def book_list_service(type_):
                'title': unicode(book.book_name), 'author': unicode(book.author_name),
                'introduce': unicode(book.brief_introduction),
                'publish': unicode(book.publishing_house.publishing_house_name),
-               'type': unicode(book.TbDimBookClass.child_class)}
+               'type': unicode(book.child_class.child_class)}
         # dic['id'], dic['imageURL'], dic['title'],
         # dic['author'], dic['introduce'], dic['publish'],
         # dic['type'] = books[i].isbn, books[i].cover_pic,
