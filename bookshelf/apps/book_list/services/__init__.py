@@ -11,11 +11,12 @@ def book_list_service(type_):
 
     for book in books:
 
-        dic = {'id': unicode(book.isbn), 'imageURL': 'http://www.read135.com' + unicode(book.cover_pic).encode('utf-8')[1:39],
+        dic = {'id': unicode(book.isbn),
+               'imageURL': 'http://www.read135.com' + unicode(book.cover_pic).encode('utf-8')[1:39],
                'title': unicode(book.book_name), 'author': unicode(book.author_name),
                'introduce': unicode(book.brief_introduction),
                'publish': unicode(book.publishing_house.publishing_house_name),
-               'type': 0}
+               'type': unicode(book.TbDimBookClass.child_class)}
         # dic['id'], dic['imageURL'], dic['title'],
         # dic['author'], dic['introduce'], dic['publish'],
         # dic['type'] = books[i].isbn, books[i].cover_pic,
