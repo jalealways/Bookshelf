@@ -5,9 +5,9 @@ from .. import models
 
 def book_list_service(type_):
     res = []
-    dim = models.TbDimBookClass.objects.filter(child_class_id=type_)
-    books = dim.TbBookBaseInfo.filter(status=1)
-    # books = models.TbBookBaseInfo.objects.filter(status=1, child_class.TbDimBookClass.= type_)
+    # dim = models.TbDimBookClass.objects.filter(child_class_id=type_)
+    # books = dim.TbBookBaseInfo.filter(status=1)
+    books = models.TbBookBaseInfo.objects.filter(status=1, TbDimBookClass__child_class=type_)
 
     for book in books:
 
