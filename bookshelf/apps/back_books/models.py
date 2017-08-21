@@ -120,23 +120,32 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
+class SunpanTemp(models.Model):
+    isbn = models.CharField(max_length=13)
+    brief_introduction = models.CharField(db_column='BRIEF_INTRODUCTION', max_length=500, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'sunpan_temp'
+
+
 class TbBookBaseInfo(models.Model):
     isbn = models.CharField(db_column='ISBN', primary_key=True, max_length=13)  # Field name made lowercase.
     book_name = models.CharField(db_column='BOOK_NAME', max_length=100)  # Field name made lowercase.
     publishing_house = models.ForeignKey('TbPublishingHouseBaseInfo', models.DO_NOTHING, db_column='PUBLISHING_HOUSE_ID')  # Field name made lowercase.
-    original_proce = models.DecimalField(db_column='ORIGINAL_PROCE', max_digits=5, decimal_places=2)  # Field name made lowercase.
+    original_proce = models.DecimalField(db_column='ORIGINAL_PROCE', max_digits=5, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     author_name = models.CharField(db_column='AUTHOR_NAME', max_length=32, blank=True, null=True)  # Field name made lowercase.
     translator_name = models.CharField(db_column='TRANSLATOR_NAME', max_length=32, blank=True, null=True)  # Field name made lowercase.
-    publishing_time = models.CharField(db_column='PUBLISHING_TIME', max_length=7, blank=True, null=True)  # Field name made lowercase.
+    publishing_time = models.CharField(db_column='PUBLISHING_TIME', max_length=20, blank=True, null=True)  # Field name made lowercase.
     book_class_id = models.CharField(db_column='BOOK_CLASS_ID', max_length=2, blank=True, null=True)  # Field name made lowercase.
     child_class = models.ForeignKey('TbDimBookClass', models.DO_NOTHING, db_column='CHILD_CLASS_ID', blank=True, null=True)  # Field name made lowercase.
     douban_rating = models.DecimalField(db_column='DOUBAN_RATING', max_digits=2, decimal_places=1, blank=True, null=True)  # Field name made lowercase.
     brief_introduction = models.CharField(db_column='BRIEF_INTRODUCTION', max_length=500, blank=True, null=True)  # Field name made lowercase.
-    cover_pic = models.ImageField(db_column='COVER_PIC', upload_to='static/images/')  # Field name made lowercase.
+    cover_pic = models.CharField(db_column='COVER_PIC', max_length=100, blank=True, null=True)  # Field name made lowercase.
     status = models.CharField(db_column='STATUS', max_length=1, blank=True, null=True)  # Field name made lowercase.
-    create_time = models.DateTimeField(db_column='CREATE_TIME')  # Field name made lowercase.
+    create_time = models.DateTimeField(db_column='CREATE_TIME', blank=True, null=True)  # Field name made lowercase.
     create_user_id = models.CharField(db_column='CREATE_USER_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
-    update_time = models.DateTimeField(db_column='UPDATE_TIME')  # Field name made lowercase.
+    update_time = models.DateTimeField(db_column='UPDATE_TIME', blank=True, null=True)  # Field name made lowercase.
     update_user_id = models.CharField(db_column='UPDATE_USER_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
@@ -209,13 +218,15 @@ class TbBookshelfBoxInfo(models.Model):
     box_status = models.CharField(db_column='BOX_STATUS', max_length=1, blank=True, null=True)  # Field name made lowercase.
     order_open_id = models.CharField(db_column='ORDER_OPEN_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     update_time = models.DateTimeField(db_column='UPDATE_TIME', blank=True, null=True)  # Field name made lowercase.
-    raspberry_id = models.CharField(db_column='Raspberry_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    raspberry_id = models.CharField(db_column='Raspberry_ID', max_length=20, blank=True, null=True)  # Field name made lowercase.
     raspberry_status = models.CharField(db_column='Raspberry_status', max_length=10, blank=True, null=True)  # Field name made lowercase.
     lock_board_id = models.CharField(db_column='lock_board_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     lock_id = models.CharField(db_column='lock_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     lock_status = models.CharField(max_length=10, blank=True, null=True)
     ray_status = models.CharField(max_length=10, blank=True, null=True)
     raspberry_ip = models.CharField(db_column='Raspberry_IP', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    lock_board_path = models.CharField(max_length=50, blank=True, null=True)
+    boardtype = models.CharField(db_column='boardType', max_length=30, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False

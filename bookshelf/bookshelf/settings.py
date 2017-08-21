@@ -141,3 +141,7 @@ STATIC_ROOT = '/var/www/bookshelf/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
 
+
+REDIS_HOST = '58.87.86.217'
+REDIS_PORT = '6379'
+
