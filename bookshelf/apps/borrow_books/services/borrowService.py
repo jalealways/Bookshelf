@@ -64,8 +64,8 @@ def unlock(msg):
     # else:
         #  还书状态监控
     # models.TbReaderInfo.objects.filter(open_id=msg[4]).update(sessionid='0')
-    time.sleep(6)
-    redis_conn.set(msg[2]+'check', str(msg[1]))
-    time.sleep(3)
-    back_msg = redis_conn.get(msg[2]+'checkback')
-    return back_msg
+    # time.sleep(6)
+    # redis_conn.set(msg[2]+'check', str(msg[1]))
+    # time.sleep(3)
+    # back_msg = redis_conn.get(msg[2]+'checkback')
+    return 'ok'
