@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^weixin/', include('apps.weixin.urls')),
     url(r'^MP_verify_Hog03Y6CA7OmhcOk.txt', include('apps.mytest.urls')),
     url(r'^bookList/', include('apps.book_list.urls')),
+    url(r'^register_login', include('apps.register_login.urls')),
 ]

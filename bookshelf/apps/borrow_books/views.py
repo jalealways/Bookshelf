@@ -16,7 +16,8 @@ def load(request):
     box_id = request.GET['state']
     with open('x.txt', 'w') as f:
         get_acces_tooken_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='+\
-                               appid+'&secret='+appsecret+'&code='+code+'&grant_type=authorization_code'
+                               appid+'&secret='+appsecret+'&code='+code+\
+                               '&grant_type=authorization_code'
         response = requests.get(get_acces_tooken_url).text
         f.write(response)
         openid = eval(response)['openid']
@@ -31,23 +32,23 @@ def load(request):
         #  用户权限校验
         user_rights = service.user_rights_check(oppen_id, box_id)
         if user_rights == 'busyDoing':
-            return HttpResponse("有任务.html")
+            return HttpResponse("busyDoing")
         elif user_rights == 'outOfNum':
-            return HttpResponse('超出可借数量')
+            return HttpResponse('outOfNum')
         else:
             #  隔间状态校验
             box_status = service.box_status_(box_id, oppen_id)
             if box_status == 'exception':
-                return HttpResponse('提示：被占用')
+                return HttpResponse('exception')
             elif box_status == 'door_unlock':
-                return HttpResponse('提示：门没锁')
+                return HttpResponse('door_unlock')
             elif box_status == 'book_none':
-                return HttpResponse('提示：没有书在里面')
+                return HttpResponse('book_none')
             else:
                 #  开锁
                 msg = service.unlock(box_status)
                 if msg == 'exception':
-                    return HttpResponse('开锁出现异常')
+                    return HttpResponse('exception')
                 else:
                     return HttpResponse(msg)
 

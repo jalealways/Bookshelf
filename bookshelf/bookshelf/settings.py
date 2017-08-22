@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'apps.borrow_books',
     'apps.back_books',
     'apps.weixin',
-    'apps.book_list'
+    'apps.book_list',
+    'apps.register_login',
 ]
 
 MIDDLEWARE = [
