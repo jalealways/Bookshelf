@@ -20,11 +20,13 @@ class RedisHelper():
 
     def get(self, key):
         if self.__redis.exists(key):
-            return self.__redis.brpop(key, 0)
+            msg = self.__redis.get(key, 0)
+            self.__redis.delete(key)
+            return msg
         else:
             return 0
 
     def set(self, key, value):
-        self.__redis.lpush(key, value)
+        self.__redis.set(key, value)
 
 

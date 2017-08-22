@@ -46,7 +46,7 @@ def load(request):
             else:
                 #  开锁
                 msg = service.unlock(box_status)
-                if msg == '异常':
+                if msg == 'exception':
                     return HttpResponse('开锁出现异常')
                 else:
                     return HttpResponse(msg)
