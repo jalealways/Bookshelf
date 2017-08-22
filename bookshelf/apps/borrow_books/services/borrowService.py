@@ -56,7 +56,7 @@ def box_status_(box_id, oppen_id):
 
 def unlock(msg):
     redis_conn = untils_.RedisHelper(host=settings.REDIS_HOST, port=settings.REDIS_PORT)
-    redis_conn.set(msg[2], msg[0])
+    redis_conn.set(msg[2], str(msg[0]))
     # if back_msg == '异常？':
     #     models.TbBookshelfBoxInfo.objects.filter(box_id=msg[0]).update(box_status='1')
     #     models.TbReaderInfo.objects.filter(open_id=msg[4]).update(sessionid='0')
@@ -65,7 +65,7 @@ def unlock(msg):
         #  还书状态监控
     # models.TbReaderInfo.objects.filter(open_id=msg[4]).update(sessionid='0')
     time.sleep(6)
-    redis_conn.set(msg[2]+'check', msg[1])
+    redis_conn.set(msg[2]+'check', str(msg[1]))
     time.sleep(3)
     back_msg = redis_conn.get(msg[2]+'checkback')
     return back_msg
