@@ -49,8 +49,8 @@ def box_status_(box_id, oppen_id):
         obj.update(box_status='0')
         return "book_none"
     else:
-        return [(board_type, board_path, lock_board_id, lock_id, 'Unlock', 1, 1),
-                (board_type, board_path, lock_board_id, lock_id, 'check', 1, 1),
+        return [(board_type, board_path, lock_board_id, lock_id, 'Unlock', '', ''),
+                (board_type, board_path, lock_board_id, lock_id, 'check', '', ''),
                 raspberry_ip]
 
 
