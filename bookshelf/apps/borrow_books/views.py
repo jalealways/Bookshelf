@@ -55,7 +55,7 @@ def load(request):
     else:
         response = HttpResponse('<a href="http://www.read135.com/register">')
         response.set_cookie("openid", oppen_id, 3600)
-        return response
+        return HttpResponse('ooookkkk')
 
 
 def back_book_monitor(request):
