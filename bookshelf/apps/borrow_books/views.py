@@ -53,7 +53,9 @@ def load(request):
                     return HttpResponse(msg)
 
     else:
-        return HttpResponse('注册.html')
+        response = HttpResponse('<a href="http://www.read135.com/register">')
+        response.set_cookie("openid", oppen_id, 3600)
+        return response
 
 
 def back_book_monitor(request):
