@@ -1,6 +1,9 @@
 #coding=utf-8
-from .. import models
 
+from django.conf import settings
+
+from .. import models
+from ... import untils_
 
 def search_book(book_id):
     book_ = models.TbBookshelfBoxInfo.filter(book_id=book_id)
@@ -27,7 +30,14 @@ def select_box(raspberry_id):
         return 'box_full'
     else:
         pass
-        return raspberry_id, box[0].box_id,
+        return (box[0].board_type, box[0].board_path,
+                box[0].lock_board_id, box[0].lock_id,
+                'unlock', '', ''), box[0].raspberry_ip
+
+
+def unlock_box(unlock_msg):
+    redis_conn = untils_.RedisHelper(host=settings.REDIS_HOST, port=settings.REDIS_PORT)
+    redis_conn.set(unlock_msg[1], str(unlock_msg[0]))
 
 
 

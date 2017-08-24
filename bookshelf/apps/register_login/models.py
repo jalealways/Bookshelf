@@ -385,6 +385,8 @@ class TbReaderInfo(models.Model):
     sessionid = models.CharField(db_column='SessionID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     reg_shelf_id = models.CharField(db_column='Reg_shelf_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     reg_time = models.DateTimeField(db_column='Reg_TIME', blank=True, null=True)  # Field name made lowercase.
+    name = models.CharField(max_length=100, blank=True, null=True)
+    password = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False

@@ -13,11 +13,14 @@ def back(request):
     #  初始化还书任务
     book_status, oppenid = search_book(book_id)
     if book_status:
-        reader_status = reader_check(oppenid)
-        if reader_status:
-            return HttpResponse('user_busyDoing')
+        # reader_status = reader_check(oppenid)
+        # if reader_status:
+        #     return HttpResponse('user_busyDoing')
         # 分配格间
-        select_box(raspberry_id)
+        unlock_msg = select_box(raspberry_id)
+        # unlock
+        unlock_box(unlock_msg)
+        return 'please_back_book'
 
     else:
         return HttpResponse('no_book_msg')
