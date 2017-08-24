@@ -16,11 +16,9 @@ def regist(request):
 
     openid = uuid.uuid4()
     # openid = request.COOKIES['openid']
-    name = request.POST['name']
     password = request.POST['password']
     tel = request.POST['tel']
-    obj = {"name": name,
-           "password": password,
+    obj = {"password": password,
            "tel_no": tel,
            "open_id": openid,
            "borrow_limit_num": 5,
@@ -34,9 +32,9 @@ def regist(request):
 
 def login(request):
 
-    name = request.POST['name']
+    name = request.POST['tel']
     password = request.POST['password']
-    obj = {"name": name,
+    obj = {"tel": name,
            "password": password}
     res = handel_login(obj)
     if res:
