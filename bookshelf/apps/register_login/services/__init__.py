@@ -10,3 +10,11 @@ def handel_regist(obj):
 def handel_login(obj):
     return models.TbReaderInfo.objects.filter(**obj)
 
+
+def center_service(openid):
+    obj = models.TbReaderInfo.objects.filter(open_id=openid)
+    return {"tel": obj[0].tel,
+            "borrow_num": obj[0].borrow_num,
+            "start_time": obj[0].reg_time ,
+            "regist_address": ""}
+

@@ -45,3 +45,11 @@ def login(request):
     else:
 
         return HttpResponse("wrong")
+
+
+def user_center(request):
+    openid = request.COOKIES.get('openid', 0)
+    if openid:
+        return HttpResponse(center_service(openid))
+    else:
+        return HttpResponse('login_need')

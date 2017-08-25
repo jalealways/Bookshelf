@@ -53,7 +53,7 @@ def load(request):
                     return HttpResponse(msg)
 
     else:
-        response = HttpResponse('<div>fuck66666666<a href="http://www.read135.com/register">fuck222223333</a></div>')
+        response = HttpResponse('<div>66666666<a href="http://www.read135.com/register">222223333</a></div>')
         response.set_cookie("openid", oppen_id, 3600)
         return response
 
