@@ -33,11 +33,11 @@ def regist(request):
 
 def login(request):
 
-    name = request.POST.get('tel')
+    tel = request.POST.get('tel')
     password = request.POST.get('password')
-    if not password or not name:
+    if not password or not tel:
         return HttpResponse('wrong')
-    obj = {"tel": name,
+    obj = {"tel_no": tel,
            "password": password}
     res = handel_login(obj)
     if res:
