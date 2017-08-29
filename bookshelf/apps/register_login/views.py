@@ -13,9 +13,12 @@ from services import *
 def regist(request):
 
     openid = uuid.uuid4()
-    # openid = request.COOKIES['openid']
+    id_ = request.COOKIES.get('openid')
+    if id:
+        openid = id_
+
     # return HttpResponse(request.POST)
-    password = request.POST.get("passwd", 0)
+    password = request.POST.get("password", 0)
     tel = request.POST.get('tel', 0)
     if not password or not tel:
         return HttpResponse('wrong')
