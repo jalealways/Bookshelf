@@ -9,7 +9,6 @@ import datetime
 from .. import untils_
 from services import *
 
-# Create your views here.
 
 
 def regist(request):
