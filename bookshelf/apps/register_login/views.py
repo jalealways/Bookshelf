@@ -24,7 +24,7 @@ def regist(request):
            "open_id": openid,
            "borrow_limit_num": 5,
            "borrow_num": 0,
-           " order_num": 0,
+           "order_num": 0,
            "active_time": datetime.datetime.now()}
     handel_regist(obj)
 
@@ -33,8 +33,10 @@ def regist(request):
 
 def login(request):
 
-    name = request.POST['tel']
-    password = request.POST['password']
+    name = request.POST.get('tel')
+    password = request.POST.get('password')
+    if not password or not name:
+        return HttpResponse('wrong')
     obj = {"tel": name,
            "password": password}
     res = handel_login(obj)
