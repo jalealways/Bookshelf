@@ -10,13 +10,12 @@ from .. import untils_
 from services import *
 
 
-
 def regist(request):
 
     openid = uuid.uuid4()
     # openid = request.COOKIES['openid']
-    return HttpResponse(request.POST)
-    password = request.POST["password"]
+    # return HttpResponse(request.POST)
+    password = request.POST["passwd"]
     tel = request.POST['tel']
     obj = {"password": password,
            "tel_no": tel,
