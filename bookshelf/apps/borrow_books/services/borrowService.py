@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 
 import uuid
 import time
@@ -52,6 +52,11 @@ def box_status_(box_id, oppen_id):
         return [(board_type, board_path, lock_board_id, lock_id, 'Unlock', '', ''),
                 (board_type, board_path, lock_board_id, lock_id, 'check', '', ''),
                 raspberry_ip]
+
+
+def borrow_book_succeed(openid, book_id):
+    pass
+
 
 
 def unlock(msg):
