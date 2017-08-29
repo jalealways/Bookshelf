@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import uuid
+import json
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -56,6 +57,6 @@ def login(request):
 def user_center(request):
     openid = request.COOKIES.get('openid', 0)
     if openid:
-        return HttpResponse(center_service(openid))
+        return HttpResponse(json.dumps(center_service(openid)))
     else:
         return HttpResponse('login_need')
