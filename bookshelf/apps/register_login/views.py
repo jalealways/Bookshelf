@@ -16,7 +16,7 @@ def regist(request):
 
     openid = uuid.uuid4()
     # openid = request.COOKIES['openid']
-    password = request.POST['password']
+    password = request.POST["u'password'"]
     tel = request.POST['tel']
     obj = {"password": password,
            "tel_no": tel,
