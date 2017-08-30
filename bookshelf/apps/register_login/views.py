@@ -88,6 +88,6 @@ def user_center(request):
 def user_reservation(request):
     openid = request.COOKIES.get('openid', 0)
     if openid:
-        pass
+        return HttpResponse('ok')
     else:
         return HttpResponse('wrong')
