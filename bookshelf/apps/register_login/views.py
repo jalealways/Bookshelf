@@ -25,9 +25,10 @@ def regist(request):
         response = requests.get(get_acces_tooken_url).text
         openid = eval(response)['openid']
 
-        response = HttpResponse("regist")
-        response.set_cookie("open_id", openid, 72000)
-        return response
+        with open('/var/www/bookshelf/static/dist/register.html', 'r') as f:
+            response = HttpResponse(f)
+            response.set_cookie("open_id", openid, 72000)
+            return response
 
     id_ = request.COOKIES.get('open_id')
     if id_:
