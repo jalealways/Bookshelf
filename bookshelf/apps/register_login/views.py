@@ -74,7 +74,11 @@ def login(request):
 def user_center(request):
     openid = request.COOKIES.get('openid', 0)
     if openid:
-        return HttpResponse(json.dumps(center_service(openid)))
+        res = json.dumps(center_service(openid))
+        if not res:
+            with open('/var/www/bookshelf/static/dist/register.html', 'r') as f:
+                return HttpResponse(f)
+        return HttpResponse(res)
     else:
         with open('/var/www/bookshelf/static/dist/register.html', 'r') as f:
             return HttpResponse(f)
