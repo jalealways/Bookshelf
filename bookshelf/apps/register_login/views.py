@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 import uuid
 import json
+import simplejson
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -18,9 +19,9 @@ def regist(request):
     if id:
         openid = id_
 
-    # return HttpResponse(request.POST)
-    password = request.POST.get("password", 0)
-    tel = request.POST.get('tel', 0)
+    req = simplejson.loads(request.raw_post_data)
+    password = req.get("password", 0)
+    tel = req.get('tel', 0)
     if not password or not tel:
         return HttpResponse('wrong')
     obj = {"password": password,
@@ -37,8 +38,9 @@ def regist(request):
 
 def login(request):
 
-    tel = request.POST.get('tel')
-    password = request.POST.get('password')
+    req = simplejson.loads(request.raw_post_data)
+    tel = req.get('tel')
+    password = req.get('password')
     if not password or not tel:
         return HttpResponse('wrong')
     obj = {"tel_no": tel,
