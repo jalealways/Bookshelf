@@ -16,7 +16,7 @@ def regist(request):
 
     openid = uuid.uuid4()
     id_ = request.COOKIES.get('openid')
-    if id:
+    if id_:
         openid = id_
 
     req = simplejson.loads(request.body)
