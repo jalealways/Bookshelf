@@ -19,7 +19,7 @@ def regist(request):
     if id:
         openid = id_
 
-    req = simplejson.loads(request.POST)
+    req = simplejson.loads(request.body)
     password = req.get("password", 0)
     tel = req.get('tel', 0)
     if not password or not tel:
@@ -38,7 +38,7 @@ def regist(request):
 
 def login(request):
 
-    req = simplejson.loads(request.POST)
+    req = simplejson.loads(request.body)
     tel = req.get('tel')
     password = req.get('password')
     if not password or not tel:
