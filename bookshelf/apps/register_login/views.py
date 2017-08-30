@@ -29,7 +29,6 @@ def regist(request):
         response.set_cookie("openid", openid, 72000)
         return response
 
-
     id_ = request.COOKIES.get('openid')
     if id_:
         openid = id_
