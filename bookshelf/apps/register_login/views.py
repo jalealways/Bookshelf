@@ -76,4 +76,5 @@ def user_center(request):
     if openid:
         return HttpResponse(json.dumps(center_service(openid)))
     else:
-        return HttpResponse('login_need')
+        with open('/var/www/bookshelf/static/dist/register.html', 'r') as f:
+            return HttpResponse(f)
