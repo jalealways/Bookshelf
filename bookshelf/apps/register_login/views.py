@@ -16,6 +16,10 @@ from services import *
 
 def regist(request):
     if request.method == 'GET':
+        if request.COOKIES.get('openid'):
+            with open('/var/www/bookshelf/static/dist/userInfo.html', 'r') as f:
+                response = HttpResponse(f)
+                return response
         appid = 'wxaab569c52de78bc3'
         appsecret = 'b1e31005610020ffb5311b5952ff00f6'
         code = request.GET['code']
