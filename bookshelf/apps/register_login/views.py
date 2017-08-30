@@ -23,13 +23,13 @@ def regist(request):
                                appid + '&secret=' + appsecret + '&code=' + code + \
                                '&grant_type=authorization_code'
         response = requests.get(get_acces_tooken_url).text
-        openid = eval(response)['openid']
+        openid = eval(response)['open_id']
 
         response = HttpResponse("regist")
         response.set_cookie("openid", openid, 72000)
         return response
 
-    id_ = request.COOKIES.get('openid')
+    id_ = request.COOKIES.get('open_id')
     if id_:
         openid = id_
 
