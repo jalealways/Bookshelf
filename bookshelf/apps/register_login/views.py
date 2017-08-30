@@ -83,3 +83,11 @@ def user_center(request):
     else:
         # with open('/var/www/bookshelf/static/dist/register.html', 'r') as f:
         return HttpResponse('login_need')
+
+
+def user_reservation(request):
+    openid = request.COOKIES.get('openid', 0)
+    if openid:
+        pass
+    else:
+        return HttpResponse('wrong')
