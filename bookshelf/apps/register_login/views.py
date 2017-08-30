@@ -8,6 +8,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
 
+
 from .. import untils_
 from services import *
 
@@ -48,7 +49,7 @@ def login(request):
     res = handel_login(obj)
     if res:
         response = HttpResponse("ok")
-        response.set_cookie("openid", res[0].open_id, 3600)
+        response.set_cookie("openid", res[0].open_id)
 
         return response
     else:
