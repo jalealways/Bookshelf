@@ -49,7 +49,7 @@ def regist(request):
            "borrow_limit_num": 5,
            "borrow_num": 0,
            "order_num": 0,
-           "active_time": datetime.datetime.now()}
+           "reg_time": datetime.datetime.now()}
     handel_regist(obj)
 
     return HttpResponse("ok")
