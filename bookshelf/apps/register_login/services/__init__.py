@@ -18,3 +18,7 @@ def center_service(openid):
             "start_time": obj[0].reg_time,
             "regist_address": ""}
 
+
+def handel_eservation(openid, book_id):
+    pass
+

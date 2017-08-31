@@ -88,6 +88,11 @@ def user_center(request):
 def user_reservation(request):
     openid = request.COOKIES.get('openid', 0)
     if openid:
+        req = simplejson.loads(request.body)
+        book_id = req.get('book_id')
+        if not book_id:
+            return HttpResponse('wrong')
+        handel_eservation(openid, book_id)
         return HttpResponse('ok')
     else:
         return HttpResponse('wrong')

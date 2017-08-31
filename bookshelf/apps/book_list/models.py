@@ -218,13 +218,15 @@ class TbBookshelfBoxInfo(models.Model):
     box_status = models.CharField(db_column='BOX_STATUS', max_length=1, blank=True, null=True)  # Field name made lowercase.
     order_open_id = models.CharField(db_column='ORDER_OPEN_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     update_time = models.DateTimeField(db_column='UPDATE_TIME', blank=True, null=True)  # Field name made lowercase.
-    raspberry_id = models.CharField(db_column='Raspberry_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    raspberry_id = models.CharField(db_column='Raspberry_ID', max_length=20, blank=True, null=True)  # Field name made lowercase.
     raspberry_status = models.CharField(db_column='Raspberry_status', max_length=10, blank=True, null=True)  # Field name made lowercase.
     lock_board_id = models.CharField(db_column='lock_board_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     lock_id = models.CharField(db_column='lock_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     lock_status = models.CharField(max_length=10, blank=True, null=True)
     ray_status = models.CharField(max_length=10, blank=True, null=True)
     raspberry_ip = models.CharField(db_column='Raspberry_IP', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    lock_board_path = models.CharField(max_length=50, blank=True, null=True)
+    boardtype = models.CharField(db_column='boardType', max_length=30, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -383,6 +385,8 @@ class TbReaderInfo(models.Model):
     sessionid = models.CharField(db_column='SessionID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     reg_shelf_id = models.CharField(db_column='Reg_shelf_ID', max_length=10, blank=True, null=True)  # Field name made lowercase.
     reg_time = models.DateTimeField(db_column='Reg_TIME', blank=True, null=True)  # Field name made lowercase.
+    name = models.CharField(max_length=100, blank=True, null=True)
+    password = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False
