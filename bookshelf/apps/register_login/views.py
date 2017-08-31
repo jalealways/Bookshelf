@@ -92,7 +92,12 @@ def user_reservation(request):
         book_id = req.get('book_id')
         if not book_id:
             return HttpResponse('wrong')
-        handel_eservation(openid, book_id)
+        obj = {"book_id": uuid.uuid4(),
+               "isbn": book_id,
+               "reader_id": openid,
+               "update_time": datetime.datetime.now(),
+               }
+        handel_eservation(obj)
         return HttpResponse('ok')
     else:
         return HttpResponse('wrong')

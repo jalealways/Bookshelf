@@ -19,6 +19,7 @@ def center_service(openid):
             "regist_address": ""}
 
 
-def handel_eservation(openid, book_id):
-    pass
+def handel_eservation(obj):
+    models.TbBookStatusDetail.objects.create(**obj)
+
 
