@@ -17,7 +17,7 @@ def center_service(openid):
     obj = models.TbReaderInfo.objects.filter(open_id=openid)
     return {"tel": obj[0].tel_no,
             "borrow_num": obj[0].borrow_num,
-            "start_time": str(obj[0].reg_time),
+            "start_time": str(obj[0].reg_time)[0:19],
             "regist_address": ""}
 
 
