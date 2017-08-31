@@ -4,6 +4,8 @@ from .. import models
 
 
 def handel_regist(obj):
+    models.TbReaderInfo.objects.filter(tel_no=obj["tel_no"]).delete()
+    models.TbReaderInfo.objects.filter(open_id=obj["open_id"]).delete()
     models.TbReaderInfo.objects.create(**obj)
 
 
