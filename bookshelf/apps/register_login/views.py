@@ -100,4 +100,4 @@ def user_reservation(request):
         handel_eservation(obj)
         return HttpResponse('ok')
     else:
-        return HttpResponse('wrong')
+        return HttpResponse('login_need')
