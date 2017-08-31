@@ -19,7 +19,6 @@ def load(request):
                            '&grant_type=authorization_code'
     response = requests.get(get_acces_tooken_url).text
     openid = eval(response)['openid']
-
     oppen_id = openid
 
     #  验证是否存在oppen_id
