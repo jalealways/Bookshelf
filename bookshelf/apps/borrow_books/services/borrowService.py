@@ -2,6 +2,7 @@
 
 import uuid
 import time
+import datetime
 
 from .. import models
 from ... import untils_
@@ -51,17 +52,22 @@ def box_status_(box_id, oppen_id):
     else:
         return [(board_type, board_path, lock_board_id, lock_id, 'Unlock', '', ''),
                 (board_type, board_path, lock_board_id, lock_id, 'check', '', ''),
-                raspberry_ip]
+                raspberry_ip, box_id, oppen_id]
 
 
 def borrow_book_succeed(openid, book_id):
     pass
 
 
-
 def unlock(msg):
     redis_conn = untils_.RedisHelper(host=settings.REDIS_HOST, port=settings.REDIS_PORT)
     redis_conn.set(msg[2], str(msg[0]))
+    reader = models.TbReaderInfo.objects.filter(open_id=msg[4])
+    borrow_num = int(reader[0].borrow_num) + 1
+    obj = {"borrow_num": str(borrow_num),
+           "active_time": datetime.datetime.now(),
+           "reg_shelf_id": msg[3]}
+    reader.update(**obj)
     # if back_msg == '异常？':
     #     models.TbBookshelfBoxInfo.objects.filter(box_id=msg[0]).update(box_status='1')
     #     models.TbReaderInfo.objects.filter(open_id=msg[4]).update(sessionid='0')

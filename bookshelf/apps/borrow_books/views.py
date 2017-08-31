@@ -14,16 +14,12 @@ def load(request):
     appsecret = 'b1e31005610020ffb5311b5952ff00f6'
     code = request.GET['code']
     box_id = request.GET['state']
-    with open('x.txt', 'w') as f:
-        get_acces_tooken_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='+\
-                               appid+'&secret='+appsecret+'&code='+code+\
-                               '&grant_type=authorization_code'
-        response = requests.get(get_acces_tooken_url).text
-        f.write(response)
-        openid = eval(response)['openid']
-        f.write(openid)
+    get_acces_tooken_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='+\
+                           appid+'&secret='+appsecret+'&code='+code+\
+                           '&grant_type=authorization_code'
+    response = requests.get(get_acces_tooken_url).text
+    openid = eval(response)['openid']
 
-    # return HttpResponse('openid:%s * box_id:%s' %(openid, box_id))
     oppen_id = openid
 
     #  验证是否存在oppen_id
@@ -50,12 +46,14 @@ def load(request):
                 if msg == 'exception':
                     return HttpResponse('exception')
                 else:
-                    return HttpResponse(msg)
+                    with open('/var/www/bookshelf/static/dist/userInfo.html', 'r') as f:
+                        return HttpResponse(f)
 
     else:
-        response = HttpResponse('<div>66666666<a href="http://www.read135.com/register">222223333</a></div>')
-        response.set_cookie("openid", oppen_id, 3600)
-        return response
+        with open('/var/www/bookshelf/static/dist/register.html', 'r') as f:
+            response = HttpResponse(f)
+            # response.set_cookie("openid", oppen_id, 3600)
+            return response
 
 
 def back_book_monitor(request):
