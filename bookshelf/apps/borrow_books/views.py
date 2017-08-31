@@ -28,18 +28,18 @@ def load(request):
         #  用户权限校验
         user_rights = service.user_rights_check(oppen_id, box_id)
         if user_rights == 'busyDoing':
-            return HttpResponse("busyDoing")
+            with open('/var/www/bookshelf/static/account/over.html', 'r') as f:
+                return HttpResponse(f)
         elif user_rights == 'outOfNum':
-            return HttpResponse('outOfNum')
+            with open('/var/www/bookshelf/static/account/unusual.html', 'r') as f:
+                return HttpResponse(f)
         else:
             #  隔间状态校验
             box_status = service.box_status_(box_id, oppen_id)
-            if box_status == 'exception':
-                return HttpResponse('exception')
-            elif box_status == 'door_unlock':
-                return HttpResponse('door_unlock')
-            elif box_status == 'book_none':
-                return HttpResponse('book_none')
+            if box_status == 'exception' or box_status == 'door_unlock' or box_status == 'book_none':
+                with open('/var/www/bookshelf/static/account/unusual.html', 'r') as f:
+                    return HttpResponse(f)
+
             else:
                 #  开锁
                 msg = service.unlock(box_status)
