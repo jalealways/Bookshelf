@@ -79,6 +79,10 @@ def user_center(request):
     openid = request.COOKIES.get('openid', 0)
     if openid:
         res = json.dumps(center_service(openid))
+        if not res:
+            response = HttpResponse('login_need')
+            response.delete_cookie('openid')
+            return response
         return HttpResponse(res)
     else:
         # with open('/var/www/bookshelf/static/dist/register.html', 'r') as f:
