@@ -27,10 +27,10 @@ def load(request):
         #  用户权限校验
         user_rights = service.user_rights_check(oppen_id, box_id)
         if user_rights == 'busyDoing':
-            with open('/var/www/bookshelf/static/account/over.html', 'r') as f:
+            with open('/var/www/bookshelf/static/account/unusual.html', 'r') as f:
                 return HttpResponse(f)
         elif user_rights == 'outOfNum':
-            with open('/var/www/bookshelf/static/account/unusual.html', 'r') as f:
+            with open('/var/www/bookshelf/static/account/over.html', 'r') as f:
                 return HttpResponse(f)
         else:
             #  隔间状态校验
